@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algerian Fire Weather Index Prediction</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
+        h1 { background-color: #e63946; color: white; padding: 20px; }
+        form { background: white; display: inline-block; margin-top: 30px; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #999; }
+        input { margin: 10px; padding: 8px; width: 200px; }
+        button { padding: 10px 20px; background-color: #457b9d; color: white; border: none; border-radius: 5px; }
+        p { font-size: 18px; color: #1d3557; }
+    </style>
+</head>
+<body>
+    <h1>Algerian Forest Fire - FWI Prediction</h1>
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        <input type="text" name="mon" placeholder="Month" required><br>
+        <input type="text" name="temp" placeholder="Temperature (°C)" required><br>
+        <input type="text" name="rh" placeholder="Relative Humidity (%)" required><br>
+        <input type="text" name="ws" placeholder="Wind Speed (km/h)" required><br>
+        <input type="text" name="rain" placeholder="Rain (mm)" required><br>
+        <input type="text" name="ffmc" placeholder="FFMC Index" required><br>
+        <input type="text" name="dmc" placeholder="DMC Index" required><br>
+        <input type="text" name="isi" placeholder="ISI Index" required><br>
+        <input type="text" name="Classes" placeholder="Classes" required><br>
+        <input type="text" name="Region" placeholder="Region" required><br>
+        <button type="submit">Predict</button>
+    </form>
+<h2>
+    The FWI prediction is {{results}}
+</h2>
+
+</body>
+</html>
